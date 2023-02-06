@@ -12,12 +12,13 @@ body {
     margin-top: auto;
     padding-left: 50px;
     padding-right: 50px;
+    width: 92%;
 }
 
 .contentOne {
     display: grid;
     position: absolute;
-    width: 90%;
+    width: 92%;
     margin-top: 5px;
     grid-template-columns: repeat(2, 80% 20%);
     grid-template-rows: repeat(1, 1fr);
@@ -61,9 +62,9 @@ body {
     position: absolute;
     grid-template-columns:repeat(6, minmax(20px, 200px));
     grid-template-rows:repeat(1, 1fr);
-    width: 92%;
+    width: 93.6%;
     height: 250px;
-    margin-top: 700px;
+    margin-top: 770px;
     align-content:center;
     justify-content: center;
     align-items:center;
@@ -77,7 +78,7 @@ body {
 
 button {
     width: 150px;
-    height: 150px;
+    height: 90px;
     align-items:center;
     justify-content: center;
     align-content:center;
@@ -85,12 +86,19 @@ button {
     background-color:#fff;
     border: 1px solid rgb(75, 74, 74);
     border-radius: 5px;
-    box-shadow: 0px 1px 0px 1px #fff;
-    animation:animation-name 2s infinite ease-in-out;
-    
-   
-
+    animation: rotate 5s  ease-in-out;
 }
+
+@keyframes rotate {
+    from{
+        rotate: 365deg;
+    }
+    to {
+        scale: (0.9);
+    }
+}
+
+
 
 button:hover{
     -webkit-transform: scale(0.9);
@@ -98,6 +106,7 @@ button:hover{
     -o-transform: scale(0.9);
     -ms-transform: scale(0.9);
      transform: scale(0.9);
+     animation:animation-name 2s infinite ease-in-out;
      
    
    }
@@ -106,8 +115,9 @@ button:hover{
     from{
         color: #464444;
         width: 190px;
-        border-left: 1px solid #4db91b;
-        border-right: 1px solid #320dda;
+        height: 190px;
+        border-left: 3px solid #858585;
+        border-right: 3px solid #727274;
         transition: background 0.3s ease color 0.2s linear;
         
         
@@ -179,17 +189,41 @@ button:hover{
    
 }
 
-
+.line {
+    
+    width: 300px;
+    height: 1px;
+    background-color:rgb(226, 237, 247);
+    animation: block 5s  ease-in-out;
+}
 
 h2 {
     font-size: 3.5em;
     color:black;
-    animation: shadow 2s infinite ease-in-out;
+    animation: background-color  5s  ease-in-out;
+    
 }
 
-@keyframes shadow {
+@keyframes background-color {
     from {
-        text-shadow: 0 0 7px #807b7b;
+        color:rgb(230, 222, 222);
+        rotate: 0 0 2px 365deg;
     }
-    to { text-shadow: 2 0 12px #cec9c9;}
+    to { color: #fff;
+        
+    }
+
 }
+
+@keyframes block {
+    from{
+        rotate: 365deg;
+        
+    }
+    to {
+        width: 207px;
+        color: #fff; 
+    }
+}
+
+
